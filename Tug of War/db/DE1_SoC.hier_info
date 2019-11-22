@@ -1,0 +1,328 @@
+|DE1_SoC
+CLOCK_50 => CLOCK_50.IN3
+HEX0[0] << Play:P1.W
+HEX0[1] << Play:P1.W
+HEX0[2] << Play:P1.W
+HEX0[3] << Play:P1.W
+HEX0[4] << Play:P1.W
+HEX0[5] << Play:P1.W
+HEX0[6] << Play:P1.W
+HEX1[0] << <VCC>
+HEX1[1] << <VCC>
+HEX1[2] << <VCC>
+HEX1[3] << <VCC>
+HEX1[4] << <VCC>
+HEX1[5] << <VCC>
+HEX1[6] << <VCC>
+HEX2[0] << <VCC>
+HEX2[1] << <VCC>
+HEX2[2] << <VCC>
+HEX2[3] << <VCC>
+HEX2[4] << <VCC>
+HEX2[5] << <VCC>
+HEX2[6] << <VCC>
+HEX3[0] << <VCC>
+HEX3[1] << <VCC>
+HEX3[2] << <VCC>
+HEX3[3] << <VCC>
+HEX3[4] << <VCC>
+HEX3[5] << <VCC>
+HEX3[6] << <VCC>
+HEX4[0] << <VCC>
+HEX4[1] << <VCC>
+HEX4[2] << <VCC>
+HEX4[3] << <VCC>
+HEX4[4] << <VCC>
+HEX4[5] << <VCC>
+HEX4[6] << <VCC>
+HEX5[0] << <VCC>
+HEX5[1] << <VCC>
+HEX5[2] << <VCC>
+HEX5[3] << <VCC>
+HEX5[4] << <VCC>
+HEX5[5] << <VCC>
+HEX5[6] << <VCC>
+KEY[0] => KEY[0].IN1
+KEY[1] => ~NO_FANOUT~
+KEY[2] => ~NO_FANOUT~
+KEY[3] => KEY[3].IN1
+LEDR[0] << Play:P1.LEDR
+LEDR[1] << Play:P1.LEDR
+LEDR[2] << Play:P1.LEDR
+LEDR[3] << Play:P1.LEDR
+LEDR[4] << Play:P1.LEDR
+LEDR[5] << Play:P1.LEDR
+LEDR[6] << Play:P1.LEDR
+LEDR[7] << Play:P1.LEDR
+LEDR[8] << Play:P1.LEDR
+LEDR[9] << <GND>
+SW[0] => ~NO_FANOUT~
+SW[1] => ~NO_FANOUT~
+SW[2] => ~NO_FANOUT~
+SW[3] => ~NO_FANOUT~
+SW[4] => ~NO_FANOUT~
+SW[5] => ~NO_FANOUT~
+SW[6] => ~NO_FANOUT~
+SW[7] => ~NO_FANOUT~
+SW[8] => ~NO_FANOUT~
+SW[9] => SW[9].IN3
+
+
+|DE1_SoC|D_FF:flopL
+clk => temp.CLK
+clk => ps.CLK
+clk => O~reg0.CLK
+reset => O.OUTPUTSELECT
+reset => ps.OUTPUTSELECT
+reset => temp.ENA
+T => always0.IN1
+T => always0.IN1
+T => ps.DATAA
+O <= O~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE1_SoC|D_FF:flopR
+clk => temp.CLK
+clk => ps.CLK
+clk => O~reg0.CLK
+reset => O.OUTPUTSELECT
+reset => ps.OUTPUTSELECT
+reset => temp.ENA
+T => always0.IN1
+T => always0.IN1
+T => ps.DATAA
+O <= O~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE1_SoC|Play:P1
+clk => Lights:light8.clk
+clk => Lights:light7.clk
+clk => Lights:light6.clk
+clk => Lights:light5.clk
+clk => Lights:center.clk
+clk => Lights:light3.clk
+clk => Lights:light2.clk
+clk => Lights:light1.clk
+clk => Lights:light0.clk
+clk => Winner:G1.clk
+reset => Lights:light8.reset
+reset => Lights:light7.reset
+reset => Lights:light6.reset
+reset => Lights:light5.reset
+reset => Lights:center.reset
+reset => Lights:light3.reset
+reset => Lights:light2.reset
+reset => Lights:light1.reset
+reset => Lights:light0.reset
+reset => Winner:G1.reset
+L => Lights:light8.L
+L => Lights:light7.L
+L => Lights:light6.L
+L => Lights:light5.L
+L => Lights:center.L
+L => Lights:light3.L
+L => Lights:light2.L
+L => Lights:light1.L
+L => Lights:light0.L
+L => Winner:G1.L
+R => Lights:light8.R
+R => Lights:light7.R
+R => Lights:light6.R
+R => Lights:light5.R
+R => Lights:center.R
+R => Lights:light3.R
+R => Lights:light2.R
+R => Lights:light1.R
+R => Lights:light0.R
+R => Winner:G1.R
+LEDR[0] <= Lights:light0.On
+LEDR[1] <= Lights:light1.On
+LEDR[2] <= Lights:light2.On
+LEDR[3] <= Lights:light3.On
+LEDR[4] <= Lights:center.On
+LEDR[5] <= Lights:light5.On
+LEDR[6] <= Lights:light6.On
+LEDR[7] <= Lights:light7.On
+LEDR[8] <= Lights:light8.On
+W[0] <= Winner:G1.W[0]
+W[1] <= Winner:G1.W[1]
+W[2] <= Winner:G1.W[2]
+W[3] <= Winner:G1.W[3]
+W[4] <= Winner:G1.W[4]
+W[5] <= Winner:G1.W[5]
+W[6] <= Winner:G1.W[6]
+
+
+|DE1_SoC|Play:P1|Lights:light8
+clk => ps.CLK
+reset => ps.OUTPUTSELECT
+C => ps.DATAB
+L => always0.IN0
+L => always0.IN0
+L => always0.IN0
+L => always0.IN0
+R => always0.IN1
+R => always0.IN1
+R => always0.IN1
+R => always0.IN1
+LL => always0.IN1
+RL => always0.IN1
+On <= ps.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE1_SoC|Play:P1|Lights:light7
+clk => ps.CLK
+reset => ps.OUTPUTSELECT
+C => ps.DATAB
+L => always0.IN0
+L => always0.IN0
+L => always0.IN0
+L => always0.IN0
+R => always0.IN1
+R => always0.IN1
+R => always0.IN1
+R => always0.IN1
+LL => always0.IN1
+RL => always0.IN1
+On <= ps.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE1_SoC|Play:P1|Lights:light6
+clk => ps.CLK
+reset => ps.OUTPUTSELECT
+C => ps.DATAB
+L => always0.IN0
+L => always0.IN0
+L => always0.IN0
+L => always0.IN0
+R => always0.IN1
+R => always0.IN1
+R => always0.IN1
+R => always0.IN1
+LL => always0.IN1
+RL => always0.IN1
+On <= ps.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE1_SoC|Play:P1|Lights:light5
+clk => ps.CLK
+reset => ps.OUTPUTSELECT
+C => ps.DATAB
+L => always0.IN0
+L => always0.IN0
+L => always0.IN0
+L => always0.IN0
+R => always0.IN1
+R => always0.IN1
+R => always0.IN1
+R => always0.IN1
+LL => always0.IN1
+RL => always0.IN1
+On <= ps.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE1_SoC|Play:P1|Lights:center
+clk => ps.CLK
+reset => ps.OUTPUTSELECT
+C => ps.DATAB
+L => always0.IN0
+L => always0.IN0
+L => always0.IN0
+L => always0.IN0
+R => always0.IN1
+R => always0.IN1
+R => always0.IN1
+R => always0.IN1
+LL => always0.IN1
+RL => always0.IN1
+On <= ps.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE1_SoC|Play:P1|Lights:light3
+clk => ps.CLK
+reset => ps.OUTPUTSELECT
+C => ps.DATAB
+L => always0.IN0
+L => always0.IN0
+L => always0.IN0
+L => always0.IN0
+R => always0.IN1
+R => always0.IN1
+R => always0.IN1
+R => always0.IN1
+LL => always0.IN1
+RL => always0.IN1
+On <= ps.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE1_SoC|Play:P1|Lights:light2
+clk => ps.CLK
+reset => ps.OUTPUTSELECT
+C => ps.DATAB
+L => always0.IN0
+L => always0.IN0
+L => always0.IN0
+L => always0.IN0
+R => always0.IN1
+R => always0.IN1
+R => always0.IN1
+R => always0.IN1
+LL => always0.IN1
+RL => always0.IN1
+On <= ps.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE1_SoC|Play:P1|Lights:light1
+clk => ps.CLK
+reset => ps.OUTPUTSELECT
+C => ps.DATAB
+L => always0.IN0
+L => always0.IN0
+L => always0.IN0
+L => always0.IN0
+R => always0.IN1
+R => always0.IN1
+R => always0.IN1
+R => always0.IN1
+LL => always0.IN1
+RL => always0.IN1
+On <= ps.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE1_SoC|Play:P1|Lights:light0
+clk => ps.CLK
+reset => ps.OUTPUTSELECT
+C => ps.DATAB
+L => always0.IN0
+L => always0.IN0
+L => always0.IN0
+L => always0.IN0
+R => always0.IN1
+R => always0.IN1
+R => always0.IN1
+R => always0.IN1
+LL => always0.IN1
+RL => always0.IN1
+On <= ps.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE1_SoC|Play:P1|Winner:G1
+clk => ps~1.DATAIN
+reset => ps.OUTPUTSELECT
+reset => ps.OUTPUTSELECT
+reset => ps.OUTPUTSELECT
+L => always0.IN0
+L => always0.IN0
+R => always0.IN1
+R => always0.IN1
+LE => always0.IN1
+RE => always0.IN1
+W[0] <= W[0].DB_MAX_OUTPUT_PORT_TYPE
+W[1] <= W[1].DB_MAX_OUTPUT_PORT_TYPE
+W[2] <= W[2].DB_MAX_OUTPUT_PORT_TYPE
+W[3] <= W[0].DB_MAX_OUTPUT_PORT_TYPE
+W[4] <= W[0].DB_MAX_OUTPUT_PORT_TYPE
+W[5] <= <VCC>
+W[6] <= W[0].DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,774 @@
+Analysis & Synthesis report for DE1_SoC
+Tue Jun 04 00:05:17 2019
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: Top-level Entity: |DE1_Soc
+ 12. Parameter Settings for User Entity Instance: hex:d0
+ 13. Parameter Settings for User Entity Instance: hex:d1
+ 14. Parameter Settings for User Entity Instance: hex:d2
+ 15. Port Connectivity Checks: "hex:d2"
+ 16. Port Connectivity Checks: "hex:d1"
+ 17. Port Connectivity Checks: "hex:d0"
+ 18. Port Connectivity Checks: "led_matrix_driver:mDriver"
+ 19. Port Connectivity Checks: "bird:l7"
+ 20. Port Connectivity Checks: "bird:l6"
+ 21. Port Connectivity Checks: "bird:l5"
+ 22. Port Connectivity Checks: "bird:l4"
+ 23. Port Connectivity Checks: "bird:l3"
+ 24. Port Connectivity Checks: "bird:l2"
+ 25. Port Connectivity Checks: "bird:l1"
+ 26. Port Connectivity Checks: "bird:l0"
+ 27. Port Connectivity Checks: "clock_divider:cdiv"
+ 28. Post-Synthesis Netlist Statistics for Top Partition
+ 29. Elapsed Time Per Partition
+ 30. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Tue Jun 04 00:05:17 2019       ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                   ; DE1_SoC                                     ;
+; Top-level Entity Name           ; DE1_Soc                                     ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 142                                         ;
+; Total pins                      ; 103                                         ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
+; Top-level entity name                                                           ; DE1_Soc            ; DE1_SoC            ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Maximum processors allowed for parallel compilation                             ; 2                  ;                    ;
+; State Machine Processing                                                        ; User-Encoded       ; Auto               ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                      ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                  ; Library ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------+---------+
+; DE1_Soc.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv           ;         ;
+; LFSR.sv                          ; yes             ; User SystemVerilog HDL File  ; C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/LFSR.sv              ;         ;
+; pipe_generator.sv                ; yes             ; User SystemVerilog HDL File  ; C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/pipe_generator.sv    ;         ;
+; bird.sv                          ; yes             ; User SystemVerilog HDL File  ; C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/bird.sv              ;         ;
+; pipeShift.sv                     ; yes             ; User SystemVerilog HDL File  ; C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/pipeShift.sv         ;         ;
+; activate.sv                      ; yes             ; User SystemVerilog HDL File  ; C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/activate.sv          ;         ;
+; led_matrix_driver.sv             ; yes             ; User SystemVerilog HDL File  ; C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/led_matrix_driver.sv ;         ;
+; clock_divider.sv                 ; yes             ; User SystemVerilog HDL File  ; C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/clock_divider.sv     ;         ;
+; crash.sv                         ; yes             ; User SystemVerilog HDL File  ; C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/crash.sv             ;         ;
+; hex.sv                           ; yes             ; User SystemVerilog HDL File  ; C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/hex.sv               ;         ;
+; D_FF.sv                          ; yes             ; User SystemVerilog HDL File  ; C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/D_FF.sv              ;         ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                         ;
++---------------------------------------------+---------------------------------------+
+; Resource                                    ; Usage                                 ;
++---------------------------------------------+---------------------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 117                                   ;
+;                                             ;                                       ;
+; Combinational ALUT usage for logic          ; 185                                   ;
+;     -- 7 input functions                    ; 2                                     ;
+;     -- 6 input functions                    ; 39                                    ;
+;     -- 5 input functions                    ; 14                                    ;
+;     -- 4 input functions                    ; 47                                    ;
+;     -- <=3 input functions                  ; 83                                    ;
+;                                             ;                                       ;
+; Dedicated logic registers                   ; 142                                   ;
+;                                             ;                                       ;
+; I/O pins                                    ; 103                                   ;
+;                                             ;                                       ;
+; Total DSP Blocks                            ; 0                                     ;
+;                                             ;                                       ;
+; Maximum fan-out node                        ; clock_divider:cdiv|divided_clocks[16] ;
+; Maximum fan-out                             ; 126                                   ;
+; Total fan-out                               ; 1330                                  ;
+; Average fan-out                             ; 2.50                                  ;
++---------------------------------------------+---------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                             ;
++--------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------+-------------------+--------------+
+; Compilation Hierarchy Node     ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                ; Entity Name       ; Library Name ;
++--------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------+-------------------+--------------+
+; |DE1_Soc                       ; 185 (0)             ; 142 (0)                   ; 0                 ; 0          ; 103  ; 0            ; |DE1_Soc                           ; DE1_Soc           ; work         ;
+;    |D_FF:ui|                   ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_Soc|D_FF:ui                   ; D_FF              ; work         ;
+;    |LFSR:r4|                   ; 1 (1)               ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_Soc|LFSR:r4                   ; LFSR              ; work         ;
+;    |activate:gs|               ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_Soc|activate:gs               ; activate          ; work         ;
+;    |bird:l0|                   ; 7 (7)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_Soc|bird:l0                   ; bird              ; work         ;
+;    |bird:l1|                   ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_Soc|bird:l1                   ; bird              ; work         ;
+;    |bird:l2|                   ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_Soc|bird:l2                   ; bird              ; work         ;
+;    |bird:l3|                   ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_Soc|bird:l3                   ; bird              ; work         ;
+;    |bird:l4|                   ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_Soc|bird:l4                   ; bird              ; work         ;
+;    |bird:l5|                   ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_Soc|bird:l5                   ; bird              ; work         ;
+;    |bird:l6|                   ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_Soc|bird:l6                   ; bird              ; work         ;
+;    |bird:l7|                   ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_Soc|bird:l7                   ; bird              ; work         ;
+;    |clock_divider:cdiv|        ; 17 (17)             ; 17 (17)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_Soc|clock_divider:cdiv        ; clock_divider     ; work         ;
+;    |crash:stat|                ; 8 (8)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_Soc|crash:stat                ; crash             ; work         ;
+;    |hex:d0|                    ; 23 (23)             ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_Soc|hex:d0                    ; hex               ; work         ;
+;    |hex:d1|                    ; 23 (23)             ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_Soc|hex:d1                    ; hex               ; work         ;
+;    |hex:d2|                    ; 23 (23)             ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_Soc|hex:d2                    ; hex               ; work         ;
+;    |led_matrix_driver:mDriver| ; 40 (40)             ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_Soc|led_matrix_driver:mDriver ; led_matrix_driver ; work         ;
+;    |pipeShift:pip1|            ; 11 (11)             ; 15 (15)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_Soc|pipeShift:pip1            ; pipeShift         ; work         ;
+;    |pipeShift:pip2|            ; 0 (0)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_Soc|pipeShift:pip2            ; pipeShift         ; work         ;
+;    |pipeShift:pip3|            ; 0 (0)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_Soc|pipeShift:pip3            ; pipeShift         ; work         ;
+;    |pipeShift:pip4|            ; 0 (0)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_Soc|pipeShift:pip4            ; pipeShift         ; work         ;
+;    |pipeShift:pip5|            ; 0 (0)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_Soc|pipeShift:pip5            ; pipeShift         ; work         ;
+;    |pipeShift:pip6|            ; 0 (0)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_Soc|pipeShift:pip6            ; pipeShift         ; work         ;
+;    |pipeShift:pip7|            ; 0 (0)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_Soc|pipeShift:pip7            ; pipeShift         ; work         ;
+;    |pipe_generator:pip0|       ; 20 (20)             ; 17 (17)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_Soc|pipe_generator:pip0       ; pipe_generator    ; work         ;
++--------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------+-------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                ;
++-------------------------------------------+---------------------------------------+
+; Register name                             ; Reason for Removal                    ;
++-------------------------------------------+---------------------------------------+
+; pipe_generator:pip0|ps[7]                 ; Merged with pipe_generator:pip0|ps[0] ;
+; pipeShift:pip1|ps[7]                      ; Merged with pipeShift:pip1|ps[0]      ;
+; pipeShift:pip2|ps[7]                      ; Merged with pipeShift:pip2|ps[0]      ;
+; pipeShift:pip3|ps[7]                      ; Merged with pipeShift:pip3|ps[0]      ;
+; pipeShift:pip4|ps[7]                      ; Merged with pipeShift:pip4|ps[0]      ;
+; crash:stat|pp[7]                          ; Merged with crash:stat|pp[0]          ;
+; bird:l1|count[5]                          ; Merged with bird:l0|count[5]          ;
+; bird:l2|count[5]                          ; Merged with bird:l0|count[5]          ;
+; bird:l3|count[5]                          ; Merged with bird:l0|count[5]          ;
+; bird:l4|count[5]                          ; Merged with bird:l0|count[5]          ;
+; bird:l5|count[5]                          ; Merged with bird:l0|count[5]          ;
+; bird:l6|count[5]                          ; Merged with bird:l0|count[5]          ;
+; bird:l7|count[5]                          ; Merged with bird:l0|count[5]          ;
+; bird:l1|count[4]                          ; Merged with bird:l0|count[4]          ;
+; bird:l2|count[4]                          ; Merged with bird:l0|count[4]          ;
+; bird:l3|count[4]                          ; Merged with bird:l0|count[4]          ;
+; bird:l4|count[4]                          ; Merged with bird:l0|count[4]          ;
+; bird:l5|count[4]                          ; Merged with bird:l0|count[4]          ;
+; bird:l6|count[4]                          ; Merged with bird:l0|count[4]          ;
+; bird:l7|count[4]                          ; Merged with bird:l0|count[4]          ;
+; bird:l1|count[3]                          ; Merged with bird:l0|count[3]          ;
+; bird:l2|count[3]                          ; Merged with bird:l0|count[3]          ;
+; bird:l3|count[3]                          ; Merged with bird:l0|count[3]          ;
+; bird:l4|count[3]                          ; Merged with bird:l0|count[3]          ;
+; bird:l5|count[3]                          ; Merged with bird:l0|count[3]          ;
+; bird:l6|count[3]                          ; Merged with bird:l0|count[3]          ;
+; bird:l7|count[3]                          ; Merged with bird:l0|count[3]          ;
+; bird:l1|count[2]                          ; Merged with bird:l0|count[2]          ;
+; bird:l2|count[2]                          ; Merged with bird:l0|count[2]          ;
+; bird:l3|count[2]                          ; Merged with bird:l0|count[2]          ;
+; bird:l4|count[2]                          ; Merged with bird:l0|count[2]          ;
+; bird:l5|count[2]                          ; Merged with bird:l0|count[2]          ;
+; bird:l6|count[2]                          ; Merged with bird:l0|count[2]          ;
+; bird:l7|count[2]                          ; Merged with bird:l0|count[2]          ;
+; bird:l1|count[1]                          ; Merged with bird:l0|count[1]          ;
+; bird:l2|count[1]                          ; Merged with bird:l0|count[1]          ;
+; bird:l3|count[1]                          ; Merged with bird:l0|count[1]          ;
+; bird:l4|count[1]                          ; Merged with bird:l0|count[1]          ;
+; bird:l5|count[1]                          ; Merged with bird:l0|count[1]          ;
+; bird:l6|count[1]                          ; Merged with bird:l0|count[1]          ;
+; bird:l7|count[1]                          ; Merged with bird:l0|count[1]          ;
+; bird:l1|count[0]                          ; Merged with bird:l0|count[0]          ;
+; bird:l2|count[0]                          ; Merged with bird:l0|count[0]          ;
+; bird:l3|count[0]                          ; Merged with bird:l0|count[0]          ;
+; bird:l4|count[0]                          ; Merged with bird:l0|count[0]          ;
+; bird:l5|count[0]                          ; Merged with bird:l0|count[0]          ;
+; bird:l6|count[0]                          ; Merged with bird:l0|count[0]          ;
+; bird:l7|count[0]                          ; Merged with bird:l0|count[0]          ;
+; pipeShift:pip2|count[7]                   ; Merged with pipeShift:pip1|count[7]   ;
+; pipeShift:pip3|count[7]                   ; Merged with pipeShift:pip1|count[7]   ;
+; pipeShift:pip4|count[7]                   ; Merged with pipeShift:pip1|count[7]   ;
+; pipeShift:pip5|count[7]                   ; Merged with pipeShift:pip1|count[7]   ;
+; pipeShift:pip6|count[7]                   ; Merged with pipeShift:pip1|count[7]   ;
+; pipeShift:pip7|count[7]                   ; Merged with pipeShift:pip1|count[7]   ;
+; pipeShift:pip2|count[6]                   ; Merged with pipeShift:pip1|count[6]   ;
+; pipeShift:pip3|count[6]                   ; Merged with pipeShift:pip1|count[6]   ;
+; pipeShift:pip4|count[6]                   ; Merged with pipeShift:pip1|count[6]   ;
+; pipeShift:pip5|count[6]                   ; Merged with pipeShift:pip1|count[6]   ;
+; pipeShift:pip6|count[6]                   ; Merged with pipeShift:pip1|count[6]   ;
+; pipeShift:pip7|count[6]                   ; Merged with pipeShift:pip1|count[6]   ;
+; pipeShift:pip2|count[5]                   ; Merged with pipeShift:pip1|count[5]   ;
+; pipeShift:pip3|count[5]                   ; Merged with pipeShift:pip1|count[5]   ;
+; pipeShift:pip4|count[5]                   ; Merged with pipeShift:pip1|count[5]   ;
+; pipeShift:pip5|count[5]                   ; Merged with pipeShift:pip1|count[5]   ;
+; pipeShift:pip6|count[5]                   ; Merged with pipeShift:pip1|count[5]   ;
+; pipeShift:pip7|count[5]                   ; Merged with pipeShift:pip1|count[5]   ;
+; pipeShift:pip2|count[4]                   ; Merged with pipeShift:pip1|count[4]   ;
+; pipeShift:pip3|count[4]                   ; Merged with pipeShift:pip1|count[4]   ;
+; pipeShift:pip4|count[4]                   ; Merged with pipeShift:pip1|count[4]   ;
+; pipeShift:pip5|count[4]                   ; Merged with pipeShift:pip1|count[4]   ;
+; pipeShift:pip6|count[4]                   ; Merged with pipeShift:pip1|count[4]   ;
+; pipeShift:pip7|count[4]                   ; Merged with pipeShift:pip1|count[4]   ;
+; pipeShift:pip2|count[3]                   ; Merged with pipeShift:pip1|count[3]   ;
+; pipeShift:pip3|count[3]                   ; Merged with pipeShift:pip1|count[3]   ;
+; pipeShift:pip4|count[3]                   ; Merged with pipeShift:pip1|count[3]   ;
+; pipeShift:pip5|count[3]                   ; Merged with pipeShift:pip1|count[3]   ;
+; pipeShift:pip6|count[3]                   ; Merged with pipeShift:pip1|count[3]   ;
+; pipeShift:pip7|count[3]                   ; Merged with pipeShift:pip1|count[3]   ;
+; pipeShift:pip2|count[2]                   ; Merged with pipeShift:pip1|count[2]   ;
+; pipeShift:pip3|count[2]                   ; Merged with pipeShift:pip1|count[2]   ;
+; pipeShift:pip4|count[2]                   ; Merged with pipeShift:pip1|count[2]   ;
+; pipeShift:pip5|count[2]                   ; Merged with pipeShift:pip1|count[2]   ;
+; pipeShift:pip6|count[2]                   ; Merged with pipeShift:pip1|count[2]   ;
+; pipeShift:pip7|count[2]                   ; Merged with pipeShift:pip1|count[2]   ;
+; pipeShift:pip2|count[1]                   ; Merged with pipeShift:pip1|count[1]   ;
+; pipeShift:pip3|count[1]                   ; Merged with pipeShift:pip1|count[1]   ;
+; pipeShift:pip4|count[1]                   ; Merged with pipeShift:pip1|count[1]   ;
+; pipeShift:pip5|count[1]                   ; Merged with pipeShift:pip1|count[1]   ;
+; pipeShift:pip6|count[1]                   ; Merged with pipeShift:pip1|count[1]   ;
+; pipeShift:pip7|count[1]                   ; Merged with pipeShift:pip1|count[1]   ;
+; pipeShift:pip2|count[0]                   ; Merged with pipeShift:pip1|count[0]   ;
+; pipeShift:pip3|count[0]                   ; Merged with pipeShift:pip1|count[0]   ;
+; pipeShift:pip4|count[0]                   ; Merged with pipeShift:pip1|count[0]   ;
+; pipeShift:pip5|count[0]                   ; Merged with pipeShift:pip1|count[0]   ;
+; pipeShift:pip6|count[0]                   ; Merged with pipeShift:pip1|count[0]   ;
+; pipeShift:pip7|count[0]                   ; Merged with pipeShift:pip1|count[0]   ;
+; pipeShift:pip5|ps[7]                      ; Merged with pipeShift:pip5|ps[0]      ;
+; pipeShift:pip6|ps[7]                      ; Merged with pipeShift:pip6|ps[0]      ;
+; pipeShift:pip7|ps[7]                      ; Merged with pipeShift:pip7|ps[0]      ;
+; clock_divider:cdiv|divided_clocks[17..31] ; Lost fanout                           ;
+; Total Number of Removed Registers = 114   ;                                       ;
++-------------------------------------------+---------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 142   ;
+; Number of registers using Synchronous Clear  ; 102   ;
+; Number of registers using Synchronous Load   ; 15    ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 82    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |DE1_Soc|hex:d0|ps[2]                    ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |DE1_Soc|hex:d1|ps[0]                    ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |DE1_Soc|hex:d2|ps[2]                    ;
+; 3:1                ; 49 bits   ; 98 LEs        ; 0 LEs                ; 98 LEs                 ; Yes        ; |DE1_Soc|pipeShift:pip1|ps[4]            ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |DE1_Soc|pipe_generator:pip0|ps[3]       ;
+; 11:1               ; 5 bits    ; 35 LEs        ; 25 LEs               ; 10 LEs                 ; Yes        ; |DE1_Soc|pipe_generator:pip0|ps[4]       ;
+; 8:1                ; 7 bits    ; 35 LEs        ; 35 LEs               ; 0 LEs                  ; No         ; |DE1_Soc|led_matrix_driver:mDriver|Mux15 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |DE1_Soc ;
++----------------+-------+------------------------------------------------+
+; Parameter Name ; Value ; Type                                           ;
++----------------+-------+------------------------------------------------+
+; whichClock     ; 16    ; Signed Integer                                 ;
++----------------+-------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Parameter Settings for User Entity Instance: hex:d0 ;
++----------------+---------+--------------------------+
+; Parameter Name ; Value   ; Type                     ;
++----------------+---------+--------------------------+
+; zero           ; 1000000 ; Unsigned Binary          ;
+; one            ; 1111001 ; Unsigned Binary          ;
+; two            ; 0100100 ; Unsigned Binary          ;
+; three          ; 0110000 ; Unsigned Binary          ;
+; four           ; 0011001 ; Unsigned Binary          ;
+; five           ; 0010010 ; Unsigned Binary          ;
+; six            ; 0000010 ; Unsigned Binary          ;
+; seven          ; 1111000 ; Unsigned Binary          ;
+; eight          ; 0000000 ; Unsigned Binary          ;
+; nine           ; 0010000 ; Unsigned Binary          ;
++----------------+---------+--------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Parameter Settings for User Entity Instance: hex:d1 ;
++----------------+---------+--------------------------+
+; Parameter Name ; Value   ; Type                     ;
++----------------+---------+--------------------------+
+; zero           ; 1000000 ; Unsigned Binary          ;
+; one            ; 1111001 ; Unsigned Binary          ;
+; two            ; 0100100 ; Unsigned Binary          ;
+; three          ; 0110000 ; Unsigned Binary          ;
+; four           ; 0011001 ; Unsigned Binary          ;
+; five           ; 0010010 ; Unsigned Binary          ;
+; six            ; 0000010 ; Unsigned Binary          ;
+; seven          ; 1111000 ; Unsigned Binary          ;
+; eight          ; 0000000 ; Unsigned Binary          ;
+; nine           ; 0010000 ; Unsigned Binary          ;
++----------------+---------+--------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Parameter Settings for User Entity Instance: hex:d2 ;
++----------------+---------+--------------------------+
+; Parameter Name ; Value   ; Type                     ;
++----------------+---------+--------------------------+
+; zero           ; 1000000 ; Unsigned Binary          ;
+; one            ; 1111001 ; Unsigned Binary          ;
+; two            ; 0100100 ; Unsigned Binary          ;
+; three          ; 0110000 ; Unsigned Binary          ;
+; four           ; 0011001 ; Unsigned Binary          ;
+; five           ; 0010010 ; Unsigned Binary          ;
+; six            ; 0000010 ; Unsigned Binary          ;
+; seven          ; 1111000 ; Unsigned Binary          ;
+; eight          ; 0000000 ; Unsigned Binary          ;
+; nine           ; 0010000 ; Unsigned Binary          ;
++----------------+---------+--------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "hex:d2"                                                                              ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; dv    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; cycle ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------+
+; Port Connectivity Checks: "hex:d1"     ;
++------+-------+----------+--------------+
+; Port ; Type  ; Severity ; Details      ;
++------+-------+----------+--------------+
+; dv   ; Input ; Info     ; Stuck at VCC ;
++------+-------+----------+--------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "hex:d0"         ;
++----------+-------+----------+--------------+
+; Port     ; Type  ; Severity ; Details      ;
++----------+-------+----------+--------------+
+; dv[5..0] ; Input ; Info     ; Stuck at GND ;
+; dv[6]    ; Input ; Info     ; Stuck at VCC ;
++----------+-------+----------+--------------+
+
+
++-------------------------------------------------------+
+; Port Connectivity Checks: "led_matrix_driver:mDriver" ;
++-----------------+-------+----------+------------------+
+; Port            ; Type  ; Severity ; Details          ;
++-----------------+-------+----------+------------------+
+; red_array[7..1] ; Input ; Info     ; Stuck at GND     ;
++-----------------+-------+----------+------------------+
+
+
++----------------------------------------------+
+; Port Connectivity Checks: "bird:l7"          ;
++------------+-------+----------+--------------+
+; Port       ; Type  ; Severity ; Details      ;
++------------+-------+----------+--------------+
+; resetState ; Input ; Info     ; Stuck at GND ;
+; downlight  ; Input ; Info     ; Stuck at GND ;
+; uplimit    ; Input ; Info     ; Stuck at GND ;
++------------+-------+----------+--------------+
+
+
++----------------------------------------------+
+; Port Connectivity Checks: "bird:l6"          ;
++------------+-------+----------+--------------+
+; Port       ; Type  ; Severity ; Details      ;
++------------+-------+----------+--------------+
+; resetState ; Input ; Info     ; Stuck at GND ;
+; uplimit    ; Input ; Info     ; Stuck at GND ;
++------------+-------+----------+--------------+
+
+
++----------------------------------------------+
+; Port Connectivity Checks: "bird:l5"          ;
++------------+-------+----------+--------------+
+; Port       ; Type  ; Severity ; Details      ;
++------------+-------+----------+--------------+
+; resetState ; Input ; Info     ; Stuck at GND ;
+; uplimit    ; Input ; Info     ; Stuck at GND ;
++------------+-------+----------+--------------+
+
+
++----------------------------------------------+
+; Port Connectivity Checks: "bird:l4"          ;
++------------+-------+----------+--------------+
+; Port       ; Type  ; Severity ; Details      ;
++------------+-------+----------+--------------+
+; resetState ; Input ; Info     ; Stuck at GND ;
+; uplimit    ; Input ; Info     ; Stuck at GND ;
++------------+-------+----------+--------------+
+
+
++----------------------------------------------+
+; Port Connectivity Checks: "bird:l3"          ;
++------------+-------+----------+--------------+
+; Port       ; Type  ; Severity ; Details      ;
++------------+-------+----------+--------------+
+; resetState ; Input ; Info     ; Stuck at VCC ;
+; uplimit    ; Input ; Info     ; Stuck at GND ;
++------------+-------+----------+--------------+
+
+
++----------------------------------------------+
+; Port Connectivity Checks: "bird:l2"          ;
++------------+-------+----------+--------------+
+; Port       ; Type  ; Severity ; Details      ;
++------------+-------+----------+--------------+
+; resetState ; Input ; Info     ; Stuck at GND ;
+; uplimit    ; Input ; Info     ; Stuck at GND ;
++------------+-------+----------+--------------+
+
+
++----------------------------------------------+
+; Port Connectivity Checks: "bird:l1"          ;
++------------+-------+----------+--------------+
+; Port       ; Type  ; Severity ; Details      ;
++------------+-------+----------+--------------+
+; resetState ; Input ; Info     ; Stuck at GND ;
+; uplimit    ; Input ; Info     ; Stuck at GND ;
++------------+-------+----------+--------------+
+
+
++----------------------------------------------+
+; Port Connectivity Checks: "bird:l0"          ;
++------------+-------+----------+--------------+
+; Port       ; Type  ; Severity ; Details      ;
++------------+-------+----------+--------------+
+; resetState ; Input ; Info     ; Stuck at GND ;
+; uplight    ; Input ; Info     ; Stuck at GND ;
+; uplimit    ; Input ; Info     ; Stuck at VCC ;
++------------+-------+----------+--------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clock_divider:cdiv"                                                                                   ;
++------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                   ; Type   ; Severity ; Details                                                                             ;
++------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; divided_clocks[31..17] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; divided_clocks[15..0]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 142                         ;
+;     ENA               ; 2                           ;
+;     ENA SCLR          ; 66                          ;
+;     ENA SLD           ; 14                          ;
+;     SCLR              ; 36                          ;
+;     SLD               ; 1                           ;
+;     plain             ; 23                          ;
+; arriav_lcell_comb     ; 195                         ;
+;     arith             ; 33                          ;
+;         1 data inputs ; 32                          ;
+;         2 data inputs ; 1                           ;
+;     extend            ; 2                           ;
+;         7 data inputs ; 2                           ;
+;     normal            ; 160                         ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 13                          ;
+;         2 data inputs ; 11                          ;
+;         3 data inputs ; 34                          ;
+;         4 data inputs ; 47                          ;
+;         5 data inputs ; 14                          ;
+;         6 data inputs ; 39                          ;
+; boundary_port         ; 103                         ;
+;                       ;                             ;
+; Max LUT depth         ; 3.00                        ;
+; Average LUT depth     ; 1.91                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Tue Jun 04 00:05:00 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE1_SoC -c DE1_SoC
+Info (20032): Parallel compilation is enabled and will use up to 2 processors
+Info (12021): Found 2 design units, including 2 entities, in source file de1_soc.sv
+    Info (12023): Found entity 1: DE1_Soc File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 2
+    Info (12023): Found entity 2: DE1_Soc_testbench File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 107
+Info (12021): Found 1 design units, including 1 entities, in source file de1_soc_golden_top.v
+    Info (12023): Found entity 1: DE1_SOC_golden_top File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_SOC_golden_top.v Line: 54
+Info (12021): Found 2 design units, including 2 entities, in source file lfsr.sv
+    Info (12023): Found entity 1: LFSR File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/LFSR.sv Line: 9
+    Info (12023): Found entity 2: LFSR_testbench File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/LFSR.sv Line: 35
+Info (12021): Found 2 design units, including 2 entities, in source file pipe_generator.sv
+    Info (12023): Found entity 1: pipe_generator File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/pipe_generator.sv Line: 8
+    Info (12023): Found entity 2: pipe_generator_testbench File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/pipe_generator.sv Line: 56
+Info (12021): Found 2 design units, including 2 entities, in source file bird.sv
+    Info (12023): Found entity 1: bird File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/bird.sv Line: 8
+    Info (12023): Found entity 2: bird_testbench File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/bird.sv Line: 61
+Info (12021): Found 2 design units, including 2 entities, in source file pipeshift.sv
+    Info (12023): Found entity 1: pipeShift File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/pipeShift.sv Line: 8
+    Info (12023): Found entity 2: pipeShift_testbench File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/pipeShift.sv Line: 45
+Info (12021): Found 2 design units, including 2 entities, in source file activate.sv
+    Info (12023): Found entity 1: activate File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/activate.sv Line: 8
+    Info (12023): Found entity 2: activate_testbench File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/activate.sv Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file led_matrix_driver.sv
+    Info (12023): Found entity 1: led_matrix_driver File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/led_matrix_driver.sv Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file clock_divider.sv
+    Info (12023): Found entity 1: clock_divider File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/clock_divider.sv Line: 10
+Info (12021): Found 2 design units, including 2 entities, in source file crash.sv
+    Info (12023): Found entity 1: crash File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/crash.sv Line: 2
+    Info (12023): Found entity 2: crash_testbench File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/crash.sv Line: 41
+Info (12021): Found 2 design units, including 2 entities, in source file hex.sv
+    Info (12023): Found entity 1: hex File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/hex.sv Line: 6
+    Info (12023): Found entity 2: hex_testbench File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/hex.sv Line: 62
+Info (12021): Found 2 design units, including 2 entities, in source file d_ff.sv
+    Info (12023): Found entity 1: D_FF File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/D_FF.sv Line: 14
+    Info (12023): Found entity 2: D_FF_testbench File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/D_FF.sv Line: 41
+Info (12127): Elaborating entity "DE1_Soc" for the top level hierarchy
+Warning (10034): Output port "LEDR" at DE1_Soc.sv(39) has no driver File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 39
+Warning (10034): Output port "GPIO_0[11..0]" at DE1_Soc.sv(40) has no driver File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 40
+Info (12128): Elaborating entity "clock_divider" for hierarchy "clock_divider:cdiv" File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 64
+Info (12128): Elaborating entity "D_FF" for hierarchy "D_FF:ui" File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 71
+Info (12128): Elaborating entity "activate" for hierarchy "activate:gs" File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 72
+Info (12128): Elaborating entity "LFSR" for hierarchy "LFSR:r4" File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 76
+Info (12128): Elaborating entity "pipe_generator" for hierarchy "pipe_generator:pip0" File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 78
+Info (12128): Elaborating entity "pipeShift" for hierarchy "pipeShift:pip1" File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 79
+Info (12128): Elaborating entity "bird" for hierarchy "bird:l0" File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 87
+Info (12128): Elaborating entity "led_matrix_driver" for hierarchy "led_matrix_driver:mDriver" File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 96
+Info (12128): Elaborating entity "crash" for hierarchy "crash:stat" File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 99
+Info (12128): Elaborating entity "hex" for hierarchy "hex:d0" File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 102
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "HEX3[0]" is stuck at VCC File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 38
+    Warning (13410): Pin "HEX3[1]" is stuck at VCC File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 38
+    Warning (13410): Pin "HEX3[2]" is stuck at VCC File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 38
+    Warning (13410): Pin "HEX3[3]" is stuck at VCC File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 38
+    Warning (13410): Pin "HEX3[4]" is stuck at VCC File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 38
+    Warning (13410): Pin "HEX3[5]" is stuck at VCC File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 38
+    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 38
+    Warning (13410): Pin "HEX4[0]" is stuck at VCC File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 38
+    Warning (13410): Pin "HEX4[1]" is stuck at VCC File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 38
+    Warning (13410): Pin "HEX4[2]" is stuck at VCC File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 38
+    Warning (13410): Pin "HEX4[3]" is stuck at VCC File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 38
+    Warning (13410): Pin "HEX4[4]" is stuck at VCC File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 38
+    Warning (13410): Pin "HEX4[5]" is stuck at VCC File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 38
+    Warning (13410): Pin "HEX4[6]" is stuck at VCC File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 38
+    Warning (13410): Pin "HEX5[0]" is stuck at VCC File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 38
+    Warning (13410): Pin "HEX5[1]" is stuck at VCC File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 38
+    Warning (13410): Pin "HEX5[2]" is stuck at VCC File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 38
+    Warning (13410): Pin "HEX5[3]" is stuck at VCC File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 38
+    Warning (13410): Pin "HEX5[4]" is stuck at VCC File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 38
+    Warning (13410): Pin "HEX5[5]" is stuck at VCC File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 38
+    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 38
+    Warning (13410): Pin "LEDR[0]" is stuck at GND File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 39
+    Warning (13410): Pin "LEDR[1]" is stuck at GND File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 39
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 39
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 39
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 39
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 39
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 39
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 39
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 39
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 39
+    Warning (13410): Pin "GPIO_0[0]" is stuck at GND File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 40
+    Warning (13410): Pin "GPIO_0[1]" is stuck at GND File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 40
+    Warning (13410): Pin "GPIO_0[2]" is stuck at GND File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 40
+    Warning (13410): Pin "GPIO_0[3]" is stuck at GND File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 40
+    Warning (13410): Pin "GPIO_0[4]" is stuck at GND File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 40
+    Warning (13410): Pin "GPIO_0[5]" is stuck at GND File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 40
+    Warning (13410): Pin "GPIO_0[6]" is stuck at GND File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 40
+    Warning (13410): Pin "GPIO_0[7]" is stuck at GND File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 40
+    Warning (13410): Pin "GPIO_0[8]" is stuck at GND File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 40
+    Warning (13410): Pin "GPIO_0[9]" is stuck at GND File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 40
+    Warning (13410): Pin "GPIO_0[10]" is stuck at GND File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 40
+    Warning (13410): Pin "GPIO_0[11]" is stuck at GND File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 40
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 15 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 12 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 41
+    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 41
+    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 41
+    Warning (15610): No output dependent on input pin "SW[0]" File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 42
+    Warning (15610): No output dependent on input pin "SW[1]" File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 42
+    Warning (15610): No output dependent on input pin "SW[2]" File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 42
+    Warning (15610): No output dependent on input pin "SW[3]" File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 42
+    Warning (15610): No output dependent on input pin "SW[4]" File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 42
+    Warning (15610): No output dependent on input pin "SW[5]" File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 42
+    Warning (15610): No output dependent on input pin "SW[6]" File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 42
+    Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 42
+    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv Line: 42
+Info (21057): Implemented 346 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 15 input pins
+    Info (21059): Implemented 88 output pins
+    Info (21061): Implemented 243 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 59 warnings
+    Info: Peak virtual memory: 4836 megabytes
+    Info: Processing ended: Tue Jun 04 00:05:17 2019
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:33
+
+

@@ -1,0 +1,17 @@
+
+module CyberPlayer(clk, reset, SW, LFSR, out);
+
+	input logic clk, reset;
+	input logic [9:0] SW, LFSR;
+	output logic out;
+	
+	
+	always_ff @(posedge clk) 
+		if (reset) 
+			out <= 0;
+			
+		else 
+			out <= (SW > LFSR);
+			
+endmodule 
+

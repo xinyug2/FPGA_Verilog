@@ -1,0 +1,21 @@
+
+
+
+module D_FF(clk,reset, T, O);
+
+	input logic clk,reset, T;
+	output logic O;
+	
+	logic temp;
+	
+	always_ff @(posedge clk) begin
+		if (reset)
+			O <= 1'b0;
+		else begin
+			temp <= T;
+			O <= temp;
+		end
+		
+	end
+	
+endmodule

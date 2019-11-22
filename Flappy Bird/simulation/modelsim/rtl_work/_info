@@ -1,0 +1,36 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/simulation/modelsim
+vDE1_Soc_testbench
+DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+!s110 1559632176
+!i10b 1
+!s100 a^@dKIa_>`g0SE9H5AA[j2
+IC>MoW9GE<z<hSnMoX>bgm1
+VDg1SIo80bB@j0V0VzS_@n1
+!s105 DE1_Soc_sv_unit
+S1
+R0
+w1559604021
+8C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv
+FC:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv
+L0 107
+OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1559632176.000000
+!s107 C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6|C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv|
+!i113 1
+o-sv -work work
+!s92 -sv -work work {+incdir+C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6}
+tCvgOpt 0
+n@d@e1_@soc_testbench

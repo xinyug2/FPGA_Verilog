@@ -1,0 +1,270 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 4/lab4/simulation/modelsim
+vD_FF
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1557385328
+!i10b 1
+!s100 CgnG[aSCMOHe771VkUKWo2
+Ij4mJ`;l2]]jFz1YPXG;]<1
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+Z4 !s105 D_FF_sv_unit
+S1
+R0
+Z5 w1557383425
+Z6 8C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 4/lab4/D_FF.sv
+Z7 FC:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 4/lab4/D_FF.sv
+L0 13
+Z8 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z9 !s108 1557385328.000000
+Z10 !s107 C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 4/lab4/D_FF.sv|
+Z11 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 4/lab4|C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 4/lab4/D_FF.sv|
+!i113 1
+Z12 o-sv -work work
+Z13 !s92 -sv -work work {+incdir+C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 4/lab4}
+Z14 tCvgOpt 0
+n@d_@f@f
+vD_FF_testbench
+R1
+R2
+!i10b 1
+!s100 7Z7ZaSm7FkdE7nQ1Og[lk2
+Ia2D]@[ZXnhBGGFJO:PoN30
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 62
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+R14
+n@d_@f@f_testbench
+vDE1_SoC
+R1
+Z15 !s110 1557385329
+!i10b 1
+!s100 4=C8i5G5OeYQ_Uk38WiYJ2
+I=0<>VgbC3_8]F<D>i3^NO1
+R3
+Z16 !s105 DE1_SoC_sv_unit
+S1
+R0
+Z17 w1557351587
+Z18 8C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 4/lab4/DE1_SoC.sv
+Z19 FC:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 4/lab4/DE1_SoC.sv
+L0 14
+R8
+r1
+!s85 0
+31
+R9
+Z20 !s107 C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 4/lab4/DE1_SoC.sv|
+Z21 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 4/lab4|C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 4/lab4/DE1_SoC.sv|
+!i113 1
+R12
+R13
+R14
+n@d@e1_@so@c
+vDE1_SoC_testbench
+R1
+R15
+!i10b 1
+!s100 PidYgdVk`C1VBH7JN1K0c3
+ILAo7DR6I@gQd1;mM8?_6@2
+R3
+R16
+S1
+R0
+R17
+R18
+R19
+L0 40
+R8
+r1
+!s85 0
+31
+R9
+R20
+R21
+!i113 1
+R12
+R13
+R14
+n@d@e1_@so@c_testbench
+vLights
+R1
+R2
+!i10b 1
+!s100 =;GPDhEJQ3<?>?Ne3ZcS;2
+I`><3kl45c0T3X1X]^76642
+R3
+Z22 !s105 Lights_sv_unit
+S1
+R0
+Z23 w1557382655
+Z24 8C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 4/lab4/Lights.sv
+Z25 FC:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 4/lab4/Lights.sv
+Z26 L0 12
+R8
+r1
+!s85 0
+31
+R9
+Z27 !s107 C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 4/lab4/Lights.sv|
+Z28 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 4/lab4|C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 4/lab4/Lights.sv|
+!i113 1
+R12
+R13
+R14
+n@lights
+vLights_testbench
+R1
+R2
+!i10b 1
+!s100 Q9ez`P==nZ9?l<O2W>W:j1
+IJ[GUZHIO1NgNEj3e^l7Te2
+R3
+R22
+S1
+R0
+R23
+R24
+R25
+L0 51
+R8
+r1
+!s85 0
+31
+R9
+R27
+R28
+!i113 1
+R12
+R13
+R14
+n@lights_testbench
+vPlay
+R1
+R15
+!i10b 1
+!s100 NaabgX@oZH^Ug9A[KJPZe3
+INYTQ[2b7[;7d2_]OL_?Z[0
+R3
+Z29 !s105 Play_sv_unit
+S1
+R0
+Z30 w1557351588
+Z31 8C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 4/lab4/Play.sv
+Z32 FC:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 4/lab4/Play.sv
+R26
+R8
+r1
+!s85 0
+31
+Z33 !s108 1557385329.000000
+Z34 !s107 C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 4/lab4/Play.sv|
+Z35 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 4/lab4|C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 4/lab4/Play.sv|
+!i113 1
+R12
+R13
+R14
+n@play
+vPlay_testbench
+R1
+R15
+!i10b 1
+!s100 ]XGY]9fOT67[nOYmEPL`61
+I?OQmnb4n^MUhh99d]<0gX0
+R3
+R29
+S1
+R0
+R30
+R31
+R32
+L0 39
+R8
+r1
+!s85 0
+31
+R33
+R34
+R35
+!i113 1
+R12
+R13
+R14
+n@play_testbench
+vWinner
+R1
+R2
+!i10b 1
+!s100 =g[0P=VLJZbEf6LX`a:W21
+IFT40FnVdoHAHk?M:AlT8_3
+R3
+Z36 !s105 Winner_sv_unit
+S1
+R0
+Z37 w1557359944
+Z38 8C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 4/lab4/Winner.sv
+Z39 FC:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 4/lab4/Winner.sv
+R26
+R8
+r1
+!s85 0
+31
+R9
+Z40 !s107 C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 4/lab4/Winner.sv|
+Z41 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 4/lab4|C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 4/lab4/Winner.sv|
+!i113 1
+R12
+R13
+R14
+n@winner
+vWinner_testbench
+R1
+R2
+!i10b 1
+!s100 KiP_hCWOUz75NgSD79lVz0
+I@Am;TgF<4`]1nLT=99eoL3
+R3
+R36
+S1
+R0
+R37
+R38
+R39
+L0 53
+R8
+r1
+!s85 0
+31
+R9
+R40
+R41
+!i113 1
+R12
+R13
+R14
+n@winner_testbench

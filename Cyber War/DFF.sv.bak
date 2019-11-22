@@ -1,0 +1,22 @@
+
+module DFF (clk1, clk2, T, O);
+
+	input logic clk1, clk2, T;
+	output logic O;
+	
+	logic m;
+	
+	always_ff @(posedge clk1) begin
+	
+		m <= T;
+		
+	end
+	
+	always_ff @(posedge clk2) begin
+	
+		O <= m;
+		
+	end
+	
+endmodule
+

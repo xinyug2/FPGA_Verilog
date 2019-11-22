@@ -1,0 +1,19 @@
+
+module play #(parameter WIDTH = 8) (clk, reset, red_array, green_array, press);
+
+	input logic clk, reset, press;
+	input logic [7:0][7:0] red_array, green_array;
+	logic gameover;
+	logic active;
+	logic addPoint;
+	
+	parameter on = 1'b1, off = 1'b0;
+	
+	
+	activate A (clk, reset, press, active);
+	
+	bird b1 (.clk, .reset, .active, .gameover, .press, .resetState(on), .uplight(off), red_array[0][6], on, red_array[0][7]);
+	genvar i;
+	generate 
+		for (i = WIDTH; i <= ; i--) begin: birdControl
+			bird B (.clk, .reset, 

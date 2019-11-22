@@ -1,0 +1,31 @@
+
+module Lights(clk,C,L,R,LL,RL,reset,On);
+
+	input logic clk,C,L,R,LL,RL,reset;
+	output logic On;
+	
+	logic ps, ns;
+	
+	parameter on = 1'b1, off = 1'b0;
+	
+	always_comb begin
+		case(ps)
+		
+			on:	if (R & L | ~R & ~L) 			 ns = on;
+					else 									 ns = off;
+					
+			off:	if (~R & L & RL | R & ~L & LL) ns = on;
+					else 									 ns = off;
+					
+		endcase 
+	end 
+	
+	assign On = ps;
+	
+	always_ff @(posedge clk)
+		if (reset)
+			ps <= C;
+		else 
+			ps <= ns;
+			
+endmodule

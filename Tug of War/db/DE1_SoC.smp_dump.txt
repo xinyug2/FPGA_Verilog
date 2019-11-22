@@ -1,0 +1,6 @@
+
+State Machine - |DE1_SoC|Play:P1|Winner:G1|ps
+Name ps~4 ps~3 ps~2 
+ps.off 0 0 0 
+ps.one 1 1 0 
+ps.two 0 1 1 

@@ -1,0 +1,9 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vlog -sv -work work +incdir+C:/Users/xinyu/OneDrive/Documents/EE\ 271/Lab/Lab\ 3/lab1_3 {C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/Lab 3/lab1_3/seaTacLight.sv}
+

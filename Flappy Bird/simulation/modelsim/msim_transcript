@@ -1,0 +1,51 @@
+# Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
+# do DE1_SoC_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -sv -work work +incdir+C:/Users/xinyu/OneDrive/Documents/EE\ 271/Lab/lab\ 6/lab\ 6 {C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:09:36 on Jun 04,2019
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6" C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv 
+# -- Compiling module DE1_Soc
+# ** Error: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv(48): (vlog-2730) Undefined variable: 'red_array'.
+# ** Error (suppressible): C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv(59): (vlog-2388) 'red_array' already declared in this scope (DE1_Soc).
+# -- Compiling module DE1_Soc_testbench
+# End time: 00:09:36 on Jun 04,2019, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# ** Error: C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./DE1_SoC_run_msim_rtl_verilog.do line 8
+# C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog -sv -work work +incdir+C:/Users/xinyu/OneDrive/Documents/EE\ 271/Lab/lab\ 6/lab\ 6 {C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_..."
+vsim work.DE1_Soc_testbench
+# vsim work.DE1_Soc_testbench 
+# Start time: 00:12:20 on Jun 04,2019
+# Loading sv_std.std
+# Loading work.DE1_Soc_testbench
+# ** Error: (vsim-3033) C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv(116): Instantiation of 'DE1_Soc' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /DE1_Soc_testbench File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv
+#         Searched libraries:
+#             C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/simulation/modelsim/rtl_work
+# Error loading design
+# End time: 00:12:21 on Jun 04,2019, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0
+vsim work.DE1_Soc_testbench
+# vsim work.DE1_Soc_testbench 
+# Start time: 00:12:23 on Jun 04,2019
+# Loading sv_std.std
+# Loading work.DE1_Soc_testbench
+# ** Error: (vsim-3033) C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv(116): Instantiation of 'DE1_Soc' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /DE1_Soc_testbench File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/DE1_Soc.sv
+#         Searched libraries:
+#             C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/simulation/modelsim/rtl_work
+# Error loading design
+# End time: 00:12:23 on Jun 04,2019, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0

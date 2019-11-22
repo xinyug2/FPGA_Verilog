@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at bird.sv(68): always construct contains both blocking and non-blocking assignments File: C:/Users/xinyu/OneDrive/Documents/EE 271/Lab/lab 6/lab 6/bird.sv Line: 68

@@ -1,0 +1,39 @@
+
+module winner(clk, reset, L, R, LE, RE, W);
+
+	input logic clk,reset,L,R,LE,RE;
+	output [6:0] W;
+	
+	logic [1:0] ps,ns;
+	
+	parameter [6:0] off = 7'b1111111,
+						 one = 7'b1111001,
+						 two = 7'b0100100;
+						 
+	always_comb begin
+	
+		case(ps)
+		
+			off: if (L & ~R & LE) 		ns = one;
+				  else if (~L & R & RE) ns = two;
+				  else 						ns = off;
+				  
+			one: ns = one;
+			two: ns = two;
+			
+			default: ns = off;
+			
+	end 
+	
+	assign W = ps;
+	
+	always_ff @(posedge clk) 
+		if (reset) 
+			ps <= off;
+		else 
+			ps <= ns;
+			
+		
+endmodule 
+
+	
